@@ -9,12 +9,18 @@ body {
   background: #eee;
   max-width: 900px;
   margin: 0 auto;
+  /* 使用grid布局 */
   display: grid;
-  /* grid-template-columns: 300px 300px 300px; */
-  grid-template-columns: repeat(6, 1fr);
-  grid-template-rows: 100px 100px 200px;
+  grid-template-columns: 300px 300px 300px;
+  /* 将网格分为6列 */
+  /* grid-template-columns: repeat(6, 1fr); */
+  /* grid中第一行100px, 第二行100px ... */
+  grid-template-rows: 200px 100px 200px;
+  /* 网格间隔 */
   grid-gap: 10px;
+  /* 水平方向的对齐方式 */
   justify-items: stretch; /* default is stretch */
+  /* 竖直方向的对齐方式 */
   align-items: stretch; /* default is stretch */
 }
 .grid-container > div {
@@ -23,7 +29,8 @@ body {
   padding: 20px;
   border: 1px solid #777;
 }
-.grid-container > div:nth-child(1) {
+/* 起始位置 1 跨越两个网格。 */
+* .grid-container > div:nth-child(1) {
   grid-column: 1 / span 2;
 }
 .grid-container > div:nth-child(2) {
@@ -43,4 +50,4 @@ body {
   grid-column: span 3;
   justify-self: end;
   align-self: start;
-}
+} 
